@@ -1,0 +1,36 @@
+.cocktail {
+  display: grid;
+  grid-template-columns: 0.27fr 0.08fr 0.65fr;
+  width: 84.8%;
+  margin: 2.5% 0 2.5% 11%;
+  /* height: 100px; */
+}
+
+.cocktail-img {
+  width: 100%;
+  border-radius: 30px;
+}
+
+.cocktail-info {
+  margin-top: 5%;
+  color: white;
+  display: grid;
+  grid-column: 3/4;
+  grid-auto-rows: max-content;
+}
+
+.property-and-description {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  margin-bottom: 4%;
+}
+
+.property {
+  font-family: "Allura";
+  font-size: 3.056vw;
+}
+
+.description {
+  font-family: "Poiret One";
+  font-size: 2.5vw;
+}
