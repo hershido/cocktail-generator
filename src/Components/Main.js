@@ -3,10 +3,10 @@ import Cocktail from "../Components/Cocktail";
 import { useState, useEffect } from "react";
 
 export default function Main() {
-  const [cocktail, setCocktail] = useState({});
+  const [cocktail, setCocktail] = useState(false);
 
   async function fetchDrink() {
-    const res = await fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php");
+    const res = await fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php?a=Non_Alcoholic");
     const data = await res.json();
     const drink = {
       id: data.drinks[0].idDrink,
@@ -40,7 +40,7 @@ export default function Main() {
       <button onClick={fetchDrink} className="shuffle-btn">
         Shuffle
       </button>
-      <Cocktail cocktail={cocktail} />
+      {cocktail ? <Cocktail cocktail={cocktail} /> : <></>}
     </div>
   );
 }

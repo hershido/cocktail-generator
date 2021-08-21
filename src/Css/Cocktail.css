@@ -1,28 +1,31 @@
 .cocktail {
   display: grid;
   grid-template-columns: 0.27fr 0.08fr 0.65fr;
-  width: 84.8%;
-  margin: 2.5% 0 2.5% 11%;
+  width: 70%;
+  margin: 2.5% auto;
   /* height: 100px; */
 }
 
 .cocktail-img {
   width: 100%;
   border-radius: 30px;
+  box-shadow: 10px 10px 20px -9px rgba(0, 0, 0, 0.31);
 }
 
 .cocktail-info {
-  margin-top: 5%;
+  margin-top: 2%;
   color: white;
   display: grid;
   grid-column: 3/4;
   grid-auto-rows: max-content;
+  animation: fadeIn 0.3;
 }
 
 .property-and-description {
   display: grid;
   grid-template-columns: 0.5fr 1fr;
   margin-bottom: 4%;
+  align-items: top;
 }
 
 .property {
@@ -33,4 +36,26 @@
 .description {
   font-family: "Poiret One";
   font-size: 2.5vw;
+}
+
+.instructions,
+.ingredients {
+  font-size: 1.5vw;
+  margin-top: 2%;
+}
+
+.read-more-btn {
+  background: none;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  font-family: "Raleway";
+  font-size: 1.3vw;
+}
+
+.read-more-btn:hover {
+  color: rgb(184, 184, 184);
 }

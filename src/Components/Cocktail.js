@@ -1,8 +1,27 @@
 import "../Css/Cocktail.css";
+import { useState, useEffect } from "react";
 
 export default function Cocktail(props) {
   console.log(props.cocktail);
   const { name, id, glass, instructions, ingredients, img } = props.cocktail;
+
+  const [collapsed, setCollapsed] = useState(false);
+  const [readMore, setReadMore] = useState(false);
+
+  function processInstructions() {
+    console.log(instructions.length);
+    if (instructions.length > 200) {
+      setReadMore(true);
+      setCollapsed(true);
+    } else {
+      setReadMore(false);
+      setCollapsed(false);
+    }
+  }
+
+  useEffect(() => {
+    processInstructions();
+  }, [props.cocktail]);
 
   return (
     <div className="cocktail">
@@ -18,11 +37,24 @@ export default function Cocktail(props) {
         </div>
         <div className="property-and-description">
           <p className="property">Ingredernts:</p>
-          <p className="description">{ingredients}</p>
+          <p className="description ingredients">{ingredients}</p>
         </div>
         <div className="property-and-description">
           <p className="property">Instructions:</p>
-          <p className="description">{instructions}</p>
+          <p className="description instructions">
+            {collapsed
+              ? instructions.substring(0, 200) + "... "
+              : instructions + " "}
+            {readMore && (
+              <button
+                className="read-more-btn"
+                onClick={() => {
+                  setCollapsed(!collapsed);
+                }}>
+                {collapsed ? "Read More" : "Show Less"}
+              </button>
+            )}
+          </p>
         </div>
       </div>
     </div>

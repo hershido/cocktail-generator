@@ -4,6 +4,7 @@
   min-height: 100vh;
   display: grid;
   grid-template-rows: repeat(4, max-content) 1fr;
+  overflow-y: scroll;
 }
 
 .heading-container {
@@ -28,11 +29,10 @@
 .sub-heading {
   font-family: "Poiret One";
   color: white;
-  text-align: left;
-  font-size: 3.3vw;
+  text-align: center;
+  font-size: 2.2vw;
   text-transform: uppercase;
-  margin-top: 5%;
-  margin-left: 11%;
+  margin-top: 2%;
 }
 
 .shuffle-btn {
@@ -44,5 +44,14 @@
   background-color: #ffce85;
   border-radius: 2.08vw;
   border: none;
-  padding: 0.7vw 3.05vw;
+  padding: 0.5vw 3.05vw;
+  cursor: pointer;
+}
+
+.shuffle-btn:hover {
+  background-color: #fdc36c;
+}
+
+.shuffle-btn:active {
+  background-color: #ffce85;
 }
